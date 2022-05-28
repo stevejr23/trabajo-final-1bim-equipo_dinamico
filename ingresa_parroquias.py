@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 # se importa la clase(s) del
 # archivo genera_tablas
-from crear_tabla import Provincia, Canton
+from crear_tablas import Provincia, Canton
 
 # se importa información del archivo configuracion
 from configuracion import cadena_base_datos
