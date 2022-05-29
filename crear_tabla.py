@@ -101,7 +101,7 @@ class Establecimiento(Base):
     parroquia = relationship("Parroquia", back_populates="establecimiento")
 
     def __repr__(self):
-        return "Establecimiento: codigoAMIE=%s - nombre=%s - codDistrito=%s - sostenimiento=%s - tipoEducacion=%s - modalidad=%s - jornada=%s - acceso=%s - numEstudiantes=%d - numDocentes=%d " % (
+        return "Establecimiento: codigoAMIE=%s - nombreInstitucion=%s - codDistrito=%s - sostenimiento=%s - tipoEducacion=%s - modalidad=%s - jornada=%s - acceso=%s - numEstudiantes=%d - numDocentes=%d " % (
             self.codigoAMIE,
             self.nombreInstitucion,
             self.codDistrito,
