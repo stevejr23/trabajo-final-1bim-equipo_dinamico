@@ -36,7 +36,6 @@ class Provincia(Base):
 
 # Un cantón pertence a un provincia.
 
-
 class Canton(Base):
     __tablename__ = 'canton'
     id = Column(Integer, primary_key=True)
@@ -51,7 +50,7 @@ class Canton(Base):
     parroquia = relationship("Parroquia", back_populates="canton")
 
     def __repr__(self):
-        return "Canton: codigo:%s - nombre: %s" % (
+        return "Canton: codigo: %s - nombre: %s" % (
             self.codigo,
             self.nombre)
 
@@ -73,12 +72,12 @@ class Parroquia(Base):
         "Establecimiento", back_populates="parroquia")
 
     def __repr__(self):
-        return "Parroquia: codigo:%s - nombre: %s" % (
+        return "Parroquia: codigo:%s - nombre: %s - IdCanton: %s"  % (
             self.codigo,
-            self.nombre)
+            self.nombre,
+            self.canton_id)
 
 # Un establecimiento pertenece a una parroquia.
-
 
 class Establecimiento(Base):
     __tablename__ = 'establecimiento'
@@ -112,6 +111,5 @@ class Establecimiento(Base):
             self.acceso,
             self.numEstudiantes,
             self.numDocentes)
-
 
 Base.metadata.create_all(engine)
